@@ -15,7 +15,8 @@ def get_status(user_id):
         'fields': 'online'
     }
     ProfileInfo = requests.post('https://api.vk.com/method/users.get', params=params)
-    return ProfileInfo.json()['response'][0]['online']  # Верните статус пользователя в ВК 1-online
+    user_status = ProfileInfo.json()['response'][0]['online']
+    return user_status  # Верните статус пользователя в ВК 1-online
 
 print(get_status(os.getenv("vk_id")))
 
