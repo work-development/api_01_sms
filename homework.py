@@ -9,7 +9,7 @@ load_dotenv()
 
 def get_status(user_id):
     params = {
-        'user_id': user_id,
+        'user_ids': user_id,
         'v': '5.92',
         'access_token': os.getenv("access_token"),
         'fields': 'online'
