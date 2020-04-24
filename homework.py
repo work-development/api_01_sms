@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_status(user_id):
+    access_token = os.getenv("access_token")
     params = {
         'user_ids': user_id,
         'v': '5.92',
-        'access_token': os.getenv("access_token"),
+        'access_token': access_token,
         'fields': 'online'
     }
     ProfileInfo = requests.post('https://api.vk.com/method/users.get', params=params)
